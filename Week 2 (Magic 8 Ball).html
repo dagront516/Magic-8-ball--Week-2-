@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Magic 8 Ball</title>
+
+<style type="text/css">
+body {
+	background-color: #333;
+	text-align: center;
+}
+MyText {
+	font-size: 24px;
+}
+</style>
+</head>
+
+<body>
+    <div id="eight-ball">
+        <button onclick="shake()">shake</button>
+        <p id="question"></p>
+        <p id="answer"></p>
+    <div>
+<p><img src="magic 8 bll.png" width="300" height="300"></p>
+<h1>Welcome to the Magic 8 Ball</h1>
+<h1>Discover your Future!!! </h1>
+<h1>LOL</h1>
+</body>
+
+<script>
+
+    
+    function shake(){       
+        var question = prompt("Ask me a question");
+        var questionText = document.getElementById('question');
+        questionText.innerHTML = question;
+
+         
+        var numberOfAnswers = 2;
+
+        
+        var answerOne = "no";
+        var answerTwo = "Yes";      
+
+        
+        var chosenAnswer = getAnswerNumber(numberOfAnswers);        
+        displayAnswer(chosenAnswer);
+
+        
+        function getAnswerNumber(answerCount){
+            var number = getRandomInt(1,answerCount);
+            return number;
+        }
+
+        
+        function getRandomInt(min,max){
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        
+        function displayAnswer(answer) {
+
+           
+            var fortuneText = document.getElementById('answer');
+
+            if ( answer == 1 ) {
+                fortuneText.innerHTML = answerOne;
+            }
+            else if ( answer == 2 ) {
+                fortuneText.innerHTML = answerTwo;
+            }
+        }
+
+    }
+</script>
+
+</html>
